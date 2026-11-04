@@ -3,10 +3,7 @@ import {
   FaGitAlt, FaSyncAlt, FaToggleOn, FaCubes, FaPuzzlePiece,
   FaDatabase, FaServer, FaPython, FaNode,
 } from 'react-icons/fa'
-import { SiSpringboot } from 'react-icons/si'
-import { SiTypescript } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { SiMysql } from 'react-icons/si';
+import { SiSpringboot, SiTypescript, SiPostgresql, SiMysql } from 'react-icons/si'
 
 
 const grupos = [
@@ -25,14 +22,14 @@ const grupos = [
       { nome: 'Spring Boot', icone: SiSpringboot },
       { nome: 'API REST', icone: FaPlug },
       { nome: 'WebLogic', icone: FaServer },
-      { nome: 'Python', icone: FaPython},
-      { nome: 'Node.js', icone: FaNode}
+      { nome: 'Python', icone: FaPython },
+      { nome: 'Node.js', icone: FaNode },
     ],
   },
   {
     titulo: 'Cloud e DevOps',
     itens: [
-      { nome: 'AzureDevOps', icone: FaCloud },
+      { nome: 'Azure DevOps', icone: FaCloud },
       { nome: 'AWS EC2', icone: FaAws },
       { nome: 'CI/CD (pipeline)', icone: FaSyncAlt },
       { nome: 'Docker', icone: FaDocker },
@@ -52,7 +49,7 @@ const grupos = [
     itens: [
       { nome: 'SQL', icone: SiMysql },
       { nome: 'Oracle SQL', icone: FaDatabase },
-      { nome: 'PostgressSQL', icone: SiPostgresql },
+      { nome: 'PostgreSQL', icone: SiPostgresql },
     ],
   },
 ]
@@ -70,7 +67,7 @@ function Habilidades() {
                 const Icone = item.icone
                 return (
                   <li key={item.nome}>
-                    <Icone /> {item.nome}
+                    <Icone aria-hidden="true" /> {item.nome}
                   </li>
                 )
               })}
@@ -81,7 +78,5 @@ function Habilidades() {
     </section>
   )
 }
-
-
 
 export default Habilidades

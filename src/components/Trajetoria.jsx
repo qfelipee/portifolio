@@ -18,7 +18,7 @@ function IconeMercado() {
 }
 
 /* ---------- EDITE AQUI ----------
-   Datas no formato AAAA-MM-DD (as de baixo são EXEMPLOS: troque pelas reais).
+   Datas no formato AAAA-MM-DD.
    fim: null => ainda está nisso; conta até hoje automaticamente. */
 const etapas = [
   {
@@ -32,13 +32,13 @@ const etapas = [
   {
     idade: '17 anos',
     titulo: 'Aprovado em 2 faculdades',
-    texto: 'Início aos estudos na SPTech, porém aprovado em outra.',
+    texto: 'Comecei na SPTech e também fui aprovado na Fatec.',
     inicio: '2025-01-23', // início na SPTech
     fim: null,
     sufixo: 'na SPTech',
     faculdades: [
       { nome: 'SPTech', logo: sptechLogo, escolhida: true, status: 'Cursando' },
-      { nome: 'Faculdade 2', logo: faculdade2Logo, status: 'Aprovado' },
+      { nome: 'Fatec', logo: faculdade2Logo, status: 'Aprovado' },
     ],
   },
   {

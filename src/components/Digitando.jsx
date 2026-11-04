@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 
-function Digitando({ texto, velocidade = 60 }) {
-  const [qtd, setQtd] = useState(0)
+const prefereMenosMovimento = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+function Digitando({ texto, velocidade = 55 }) {
+  // Quem pediu menos movimento vê a frase inteira de uma vez
+  const [qtd, setQtd] = useState(() => (prefereMenosMovimento() ? texto.length : 0))
 
   useEffect(() => {
     if (qtd >= texto.length) return
@@ -11,9 +15,13 @@ function Digitando({ texto, velocidade = 60 }) {
 
   return (
     <>
-      <span>{texto.slice(0, qtd)}</span>
-      <span className="cursor">|</span>
-      <span className="digitando-resto">{texto.slice(qtd)}</span>
+      {/* Leitores de tela leem a frase completa, e não letra por letra */}
+      <span className="sr-only">{texto}</span>
+      <span aria-hidden="true">
+        <span>{texto.slice(0, qtd)}</span>
+        <span className="cursor">|</span>
+        <span className="digitando-resto">{texto.slice(qtd)}</span>
+      </span>
     </>
   )
 }

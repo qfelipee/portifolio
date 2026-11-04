@@ -1,18 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Felipe - Portifolio</title>
-</head>
+    <title>Felipe Ferraz | Desenvolvedor Back-end</title>
+    <meta
+      name="description"
+      content="Portfólio de Felipe de Carvalho Ferraz: estudante de Sistemas de Informação na SPTech e estagiário na Vivo, com foco em back-end com Java e Spring Boot."
+    />
+    <meta name="theme-color" content="#0f1117" />
+    <link rel="canonical" href="https://felipeferrazdev-portifolio.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Pré-visualização do link (LinkedIn, WhatsApp, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Felipe Ferraz" />
+    <meta property="og:title" content="Felipe Ferraz | Desenvolvedor Back-end" />
+    <meta
+      property="og:description"
+      content="Estudante de Sistemas de Informação e estagiário na Vivo. Java, Spring Boot, React e cloud."
+    />
+    <meta property="og:url" content="https://felipeferrazdev-portifolio.vercel.app/" />
+    <meta property="og:image" content="https://felipeferrazdev-portifolio.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Felipe de Carvalho Ferraz, desenvolvedor back-end em formação" />
+    <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Aplica o tema salvo antes da primeira pintura (evita o "piscar" ao recarregar) -->
+    <script>
+      try {
+        var tema = localStorage.getItem('tema')
+        if (!tema) {
+          tema = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.dataset.theme = tema
+      } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -3,7 +3,7 @@ import BotaoCurriculo from './BotaoCurriculo'
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="inicio">
       <p className="hero-tag">Olá, eu sou o Felipe</p>
 
       <h1>
@@ -11,8 +11,8 @@ function Hero() {
       </h1>
 
       <p className="hero-sub">
-        Estudante de Sistemas de Informação e estagiário, desenvolvendo soluções
-        full-stack com Java, React e cloud.
+        Estudante de Sistemas de Informação na SPTech e estagiário na Vivo. Foco
+        em back-end com Java e Spring Boot, com prática em front-end com React.
       </p>
 
       <div className="hero-acoes">

@@ -1,23 +1,29 @@
 :root {
+  color-scheme: dark;
   --bg: #0f1117;
   --surface: #181b24;
   --text: #e8eaf0;
   --muted: #9aa0b0;
   --accent: #7c5cff;
-  --radius: 12px;
-  --font: 'Inter', system-ui, sans-serif;
   --glow: rgba(124, 92, 255, 0.25);
   --border: rgba(255, 255, 255, 0.08);
---nav-bg: rgba(15, 17, 23, 0.85);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --nav-bg: rgba(15, 17, 23, 0.85);
+  --radius: 12px;
+  --largura: 1040px;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
+
 :root[data-theme='light'] {
+  color-scheme: light;
   --bg: #f7f8fb;
   --surface: #ffffff;
   --text: #14161f;
   --muted: #5b6172;
   --accent: #6a4bff;
   --glow: rgba(106, 75, 255, 0.18);
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(0, 0, 0, 0.09);
+  --border-strong: rgba(0, 0, 0, 0.2);
   --nav-bg: rgba(247, 248, 251, 0.85);
 }
 
@@ -27,18 +33,80 @@
   padding: 0;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--accent); }
-img { max-width: 100%; display: block; }
+a {
+  color: var(--accent);
+}
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+}
+
+/* Todas as seções compartilham a mesma largura e o mesmo ritmo vertical */
 section {
-  max-width: 960px;
+  max-width: var(--largura);
   margin: 0 auto;
-  padding: 5rem 1.5rem;
-} 
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 4vw, 1.5rem);
+}
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Respeita quem pediu menos movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
